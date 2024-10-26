@@ -26,6 +26,8 @@ One of the most famous Easter Eggs in Google Chrome is Chrome Dino, which appear
 This game, also known as The Dinosaur Game, is a browser game developed by Google and integrated into the Google Chrome web browser.
 The player guides a pixelated Tyrannosaurus Rex through a side-scrolling desert landscape, trying to avoid cactus obstacles to get the highest possible score.
 
+![dino-2](https://github.com/user-attachments/assets/cf887a18-7b60-44b5-abae-c9581163b4f0)
+
 The T-rex was designed and introduced in 2014 by Sebastien Gabriel, a visual designer also known for designing other Chrome icons, with the idea of ​​introducing an error message of no Internet connection that the user hopefully never sees. If unfortunately it were to happen, the attempt is made to make this inconvenience as pleasant as possible by distracting the user, so that the frustration gives way to a moment of pleasant relaxation.
 
 The choice of the Tyrannosaurus as the protagonist of the game is not accidental, in fact the underlying message is: when you lose your Internet connection it is like being catapulted back to the age of the dinosaurs.
@@ -83,7 +85,11 @@ The Logic and View modules and their classes are described in detail below.
 
 ## 3.2 Logic
 
-Classes in the **Logic** block of Chrome Dino are located in the "logic" package. Key classes include:
+Classes in the **Logic** block of Chrome Dino are located in the "logic" package. 
+
+![Logic](https://github.com/user-attachments/assets/ffc5c70f-272c-4099-8089-3fe000f12ee5)
+
+Key classes include:
 
 - **Enemy**: An abstract class representing generic enemies with four abstract methods: `draw(Graphics g)`, `update()`, `getBound()`, and `isOutOfScreen()`.
 - **Cactus**: extends the `Enemy` class, it represents the enemy of the main character. It stores the coordinate on the X axis, the height, the width of the cactus and its bound, that is, the imaginary rectangle in which it is contained, whose collision with the dinosaur causes the “Game Over”. It has the `isOutOfScreen()` method, aimed at verifying whether the enemy has been correctly overcome. It also has a `getBound()` method that returns the size of the cactus’s bound. The `draw(Graphics g)` and `update()` methods are used to draw and update the cactus on the screen, respectively.
@@ -96,7 +102,11 @@ Classes in the **Logic** block of Chrome Dino are located in the "logic" package
 
 ## 3.3 View
 
-Classes in the **View** block are located in the "view" package. Key classes include:
+Classes in the **View** block are located in the "view" package. 
+
+![View](https://github.com/user-attachments/assets/f456b464-cefe-4da0-8edf-abd34748b7fa)
+
+Key classes include:
 
 - **GameWindow**: extends `JFrame` and constitutes the main window of the graphical application. Inside it there is a panel, an instance of GameScreen. It contains the main and is responsible for starting the game using the `startGame()` method.
 - **GameScreen**: extends `JPanel` and implements `Runnable` and `KeyListener`. This class contains the `startGame()` method, invoked by `GameWindow`, which allows you to start the graphical application on a specific thread. The class draws and updates the graphical panel with all its components, namely the dinosaur, the cacti, the clouds and the ground, through the methods `paint(Graphics g)` and `gameUpdate()`. The latter is invoked by the `run()` method which represents the “Game Loop” of the video game. GameScreen implements `KeyListener`, so it is able to handle all events related to any user input via the keyboard. In the specific case of this application, the user can only use the space bar and the down arrow key (↓). The `keyPressed(KeyEvent e)` and `keyReleased(KeyEvent e)` methods allow you to specify the behavior of the program when a key is pressed or released respectively. In particular, if the application has just been launched, you can start playing by pressing the space bar; instead if the game has started you can make the dinosaur jump with the space bar and you can make it lower by pressing the down arrow key (↓). In case of "Game Over", you can restart playing by pressing the space bar. Finally, the `resetGame()` method allows you to reset the game in case of "Game Over".
