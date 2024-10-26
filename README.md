@@ -5,12 +5,12 @@
    1. [The Chrome Dino Game](#the-chrome-dino-game)
    2. [The Chrome Dino Application](#the-chrome-dino-application)
 2. [Requirements Specification](#requirements-specification)
-3. [Project Design](#project)
+3. [Project Design](#project-design)
    1. [Software System Architecture](#software-system-architecture)
    2. [Logic](#logic)
    3. [View](#view)
 4. [Issues Encountered](#issues-encountered)
-5. [Potential Extensions and Customizations](#extension-and-customization-possibilities)
+5. [Potential Extensions and Customizations](#potential-extensions-and-customizations)
 6. [How to Run](#how-to-run)
 
 # 1 Problem Description
